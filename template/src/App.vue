@@ -1,28 +1,27 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     {{#router}}
-    <router-view/>
+    <router-view />
     {{else}}
-    <HelloWorld/>
+    <HelloWorld />
     {{/router}}
   </div>
 </template>
 
 <script>
 {{#unless router}}
-import HelloWorld from './components/HelloWorld'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import HelloWorld from './components/HelloWorld.vue';
 
 {{/unless}}
 export default {
-  name: 'app'{{#router}}{{#if_eq lintConfig "airbnb"}},{{/if_eq}}{{else}},
+  name: 'App'{{#unless router}},
   components: {
-    HelloWorld{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
-  }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}{{/router}}
-}{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+    HelloWorld
+  }{{/unless}}
+};
 </script>
 
-<style>
+<style scoped>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
