@@ -24,51 +24,21 @@ module.exports = {
       "type": "string",
       "message": "Author"
     },
-    "build": {
-      "type": "list",
-      "message": "Vue build",
-      "choices": [
-        {
-          "name": "Runtime + Compiler: recommended for most users",
-          "value": "standalone",
-          "short": "standalone"
-        },
-        {
-          "name": "Runtime-only: about 6KB lighter min+gzip, but templates (or any Vue-specific HTML) are ONLY allowed in .vue files - render functions are required elsewhere",
-          "value": "runtime",
-          "short": "runtime"
-        }
-      ]
-    },
     "router": {
       "type": "confirm",
       "message": "Install vue-router?"
     },
+    "vuex": {
+      "type": "confirm",
+      "message": "Install vue-vuex?"
+    },
+    "i18n": {
+      "type": "confirm",
+      "message": "Install vue-i18n?"
+    },
     "lint": {
       "type": "confirm",
-      "message": "Use ESLint to lint your code?"
-    },
-    "lintConfig": {
-      "when": "lint",
-      "type": "list",
-      "message": "Pick an ESLint preset",
-      "choices": [
-        {
-          "name": "Standard (https://github.com/standard/standard)",
-          "value": "standard",
-          "short": "Standard"
-        },
-        {
-          "name": "Airbnb (https://github.com/airbnb/javascript)",
-          "value": "airbnb",
-          "short": "Airbnb"
-        },
-        {
-          "name": "none (configure it yourself)",
-          "value": "none",
-          "short": "none"
-        }
-      ]
+      "message": "Use ESLint to lint your code? (Airbnb preset)"
     },
     "unit": {
       "type": "confirm",
@@ -86,7 +56,9 @@ module.exports = {
     "test/unit/**/*": "unit",
     "build/webpack.test.conf.js": "unit",
     "test/e2e/**/*": "e2e",
-    "src/router/**/*": "router"
+    "src/router/**/*": "router",
+    "src/store/**/*": "vuex",
+    "src/i18n/**/*": "i18n"
   },
   "completeMessage": "To get started:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install\n  npm run dev\n\nDocumentation can be found at https://vuejs-templates.github.io/webpack"
 };
