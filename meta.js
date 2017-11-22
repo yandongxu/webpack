@@ -38,7 +38,24 @@ module.exports = {
     },
     "lint": {
       "type": "confirm",
-      "message": "Use ESLint to lint your code? (Airbnb preset)"
+      "message": "Use ESLint to lint your code?"
+    },
+    "lintConfig": {
+      "when": "lint",
+      "type": "list",
+      "message": "Pick an ESLint preset",
+      "choices": [
+        {
+          "name": "Airbnb (https://github.com/airbnb/javascript)",
+          "value": "airbnb",
+          "short": "Airbnb"
+        },
+        {
+          "name": "none (configure it yourself)",
+          "value": "none",
+          "short": "none"
+        }
+      ]
     },
     "unit": {
       "type": "confirm",
@@ -75,8 +92,10 @@ module.exports = {
     ".eslintrc.js": "lint",
     ".eslintignore": "lint",
     "config/test.env.js": "unit || e2e",
+    "build/webpack.test.conf.js": "e2e || (unit && runner === 'karma')",
     "test/unit/**/*": "unit",
     "test/unit/index.js": "unit && runner === 'karma'",
+    "test/unit/jest.conf.js": "unit && runner === 'jest'",
     "test/unit/karma.conf.js": "unit && runner === 'karma'",
     "test/unit/specs/index.js": "unit && runner === 'karma'",
     "test/unit/setup.js": "unit && runner === 'jest'",
