@@ -77,8 +77,6 @@
     "vue-jest": "^1.0.2",
     {{/if_eq}}
     {{#if_eq runner "karma"}}
-    "cross-env": "^5.0.1",
-    "karma": "^1.4.1",
     "cross-env": "^5.0.5",
     "karma": "^1.7.0",
     "karma-chrome-launcher": "^2.2.0",
@@ -92,9 +90,9 @@
     "mocha": "^3.5.0",
     "chai": "^4.1.2",
     "sinon": "^4.0.0",
-    "sinon-chai": "^2.8.0",
-    "inject-loader": "^3.0.0",
-    "babel-plugin-istanbul": "^4.1.1",
+    "sinon-chai": "^2.13.0",
+    "inject-loader": "^3.0.1",
+    "babel-plugin-istanbul": "^4.1.4",
     {{/if_eq}}
     "node-notifier": "^5.1.2",
     {{#e2e}}
